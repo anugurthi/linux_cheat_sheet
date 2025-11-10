@@ -1,4 +1,4 @@
-# Linux for DevOps – 7 Day On‑Ramp
+# Linux for DevOps – 7 Day Roadmap
 
 One compact repository to learn the Linux pieces that matter for beginners. You’ll touch navigation, packages, logs, services, scripting, networking, containers, and a taste of config management—without deep server admin detours.
 
