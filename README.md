@@ -1,8 +1,8 @@
 # Linux for DevOps – 7 Day On‑Ramp
 
-One compact repository to learn the Linux pieces that matter for entry‑level DevOps. You’ll touch navigation, packages, logs, services, scripting, networking, containers, and a taste of config management—without deep server admin detours.
+One compact repository to learn the Linux pieces that matter for beginners. You’ll touch navigation, packages, logs, services, scripting, networking, containers, and a taste of config management—without deep server admin detours.
 
-Start with `ROADMAP.md` (flattened one‑week plan) then open each guide and run every command in your own `~/lab` sandbox.
+Start with `ROADMAP.md` (flattened one‑week plan) then open each guide and run every command in your own lab environment—try an EC2 instance, an Azure VM, a local VM, or a GCP VM for hands-on practice.
 
 ## Guides (Flat Files)
 | Topic | File | Focus |
