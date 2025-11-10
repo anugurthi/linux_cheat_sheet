@@ -1,108 +1,130 @@
-# Linux Beginner & DevOps Launchpad
+# Linux for DevOps – 7 Day On‑Ramp
 
-This repository is a progressive learning path for absolute beginners to go from “I’ve never used Linux” to “I can manage and automate servers like a junior DevOps engineer.” Start with the roadmap, then open each guide and practice every command.
+One compact repository to learn the Linux pieces that matter for entry‑level DevOps. You’ll touch navigation, packages, logs, services, scripting, networking, containers, and a taste of config management—without deep server admin detours.
 
-## Core Guides (Structured Folders)
-| Topic | File (Path) | What You'll Learn |
-|-------|-------------|-------------------|
-| Orientation & distros | `foundations/LinuxIntro.md` | What Linux is, choosing a distribution |
-| Roadmap | `roadmap/ROADMAP.md` | Phases, milestones, practice cadence |
-| Filesystem | `foundations/FileSystem.md` | Directory purposes, space inspection |
-| Everyday commands | `foundations/BasicCommands.md` | Navigation, system info, files, monitoring basics |
-| Listing mastery | `lsCommands.md` (to be moved under foundations) | Sorting, filtering, flags, aliases |
-| Key concepts map | `foundations/KeyConcepts.md` | Concept relationships, mental model |
-| Packages | `packaging/PackageManagement.md` | apt, dnf/yum, pacman, zypper fundamentals |
-| RPM deep dive | `packaging/RPMCommands.md` | Low-level queries & verification |
-| File operations | `scripting/FileOperations.md` | Create, edit, move, search, archive |
-| Permissions | `scripting/Permissions.md` | rwx, ownership, umask, special bits |
-| Scripting | `scripting/RunningScripts.md` | Shebangs, execution, error handling |
-| DevOps essentials | `devops/DevOpsEssentials.md` (incoming) | Services, logging, containers, hardening |
-| Interview prep | `interview/InterviewQuestions.md` | Common Linux & DevOps questions |
+Start with `ROADMAP.md` (flattened one‑week plan) then open each guide and run every command in your own `~/lab` sandbox.
 
-## Quick Start (First 10 Minutes)
-```bash
-# Where am I?
-pwd
-# What kernel am I on?
-uname -r
-# What does the top-level filesystem look like?
-ls /
-# Make a playground and explore
-mkdir -p ~/play && cd ~/play
-# Create and inspect files
-touch notes.txt
-ls -l
-# Write something
-echo "Linux is fun" > notes.txt
-cat notes.txt
-# Disk and memory overview
-df -h | head
-free -h
-```
+## Guides (Flat Files)
+| Topic | File | Focus |
+|-------|------|-------|
+| Orientation & distros | `LinuxIntro.md` | What Linux is & choosing a distro |
+| Filesystem layout | `FileSystem.md` | Where configs, logs, binaries live |
+| Everyday commands | `BasicCommands.md` | Core command muscle memory |
+| Key conceptual map | `KeyConcepts.md` | How pieces fit together |
+| File manipulation | `FileOperations.md` | Create, search, archive, globbing |
+| Permissions & ownership | `Permissions.md` | rwx, umask, special bits |
+| Package management | `PackageManagement.md` | apt/dnf/pacman/zypper workflow |
+| RPM deep dive | `RPMCommands.md` | Low-level package inspection & verify |
+| Scripting basics | `RunningScripts.md` | Shebangs, arguments, safety flags |
+| DevOps essentials | `DevOpsEssentials.md` | Services, logs, monitoring, containers |
+| Interview practice | `InterviewQuestions.md` | Q&A quick reference |
+| 7‑Day plan | `ROADMAP.md` | Daily objectives & artifacts |
 
-Next: Open `FileSystem.md` and read the directory table; then reproduce the examples in a terminal.
+Optional legacy `lsCommands.md` still present (detailed `ls` usage); integrate as needed.
 
-## Recommended Sequence
-1. `foundations/LinuxIntro.md` – Understand the landscape.
-2. `roadmap/ROADMAP.md` – See the full journey.
-3. `foundations/BasicCommands.md` – Build terminal muscle memory.
-4. `foundations/FileSystem.md` – Know where things live.
-5. `lsCommands.md` (will relocate under foundations) – Efficient file inspection.
-6. `foundations/KeyConcepts.md` – Connect the conceptual dots.
-7. `scripting/FileOperations.md` – Manipulate data safely.
-8. `scripting/Permissions.md` – Secure access.
-9. `packaging/PackageManagement.md` & `packaging/RPMCommands.md` – Install & audit software.
-10. `scripting/RunningScripts.md` – Automate tasks.
-11. `devops/DevOpsEssentials.md` – Integrate services, logging & containers.
-12. `interview/InterviewQuestions.md` – Solidify & prepare.
+## External Learning References (Curated)
+The following external resource clusters can deepen topics beyond this repo. These are organized thematically based on large publicly available tutorial collections (e.g. TecMint). Use them for drill-down; do NOT attempt to consume everything linearly.
 
-## Core Command Categories (Snapshot)
-Navigation: `pwd`, `cd`, `ls`
-Files: `touch`, `cat`, `less`, `head`, `tail`, `rm`, `cp`, `mv`
-System info: `hostnamectl`, `uname`, `df`, `free`
-Processes: `ps`, `top`
-Search: `find`, `grep`
-Networking: `ip`, `ping`, `curl`
-Packages: `apt install`, `dnf install`, `pacman -S`, `zypper install`, `rpm -qi`
+| Theme | Why It Matters | External Topic Cluster (Examples to Search) |
+|-------|----------------|---------------------------------------------|
+| Intro & Install | Pick a distro, understand boot basics | "Linux boot process", "VirtualBox install <distro>", "beginner distro comparison" |
+| Core Commands | Build muscle memory with variations | "ls command examples", "find practical examples", "grep patterns" |
+| Advanced CLI | Efficiency & text wrangling | "sort advanced options", "wc usage", "rename batch files", "lsof examples" |
+| Users & Permissions | Secure multi-user environments | "useradd vs adduser", "sudo configuration", "ACLs linux" |
+| Package Management | Multi-distro proficiency | "apt vs apt-get", "dnf commands", "rpm verify", "zypper basics" |
+| Monitoring & Scheduling | Operate and automate | "top command flags", "cron scheduling examples", "performance monitoring tools" |
+| Archiving & Backup | Data safety & migration | "tar advanced examples", "rsync remote sync", "snapshot tools" |
+| Filesystems & Storage (Later) | Scaling & reliability | "ext4 vs xfs", "LVM snapshot", "RAID levels explained" |
+| Services & systemd | Reliable app lifecycle | "systemctl manage services", "journalctl filtering" |
+| Security & Firewall | Hardening foundations | "SSH hardening tips", "iptables basics", "firewalld common rules" |
+| Web Stacks (Optional) | Deploy application stacks | "LAMP setup", "LEMP nginx basics", "Apache virtual hosts SSL" |
+| Database Admin (Optional) | Persist & tune data | "mysql backup restore", "master slave replication basics" |
+| Shell Scripting Deep Dive | Stronger automation | "bash arrays", "functions in shell", "parameter expansion" |
+| Interview Prep | Assessment readiness | "linux interview questions", "systemd interview questions" |
+| Certification (Optional) | Structured milestones | "RHCSA objectives", "LFCS study guide" |
 
-## Safety First
-* Use `rm -i` until confident; beware of wildcards.
-* Quote variables: `echo "$FILE"` to avoid glob expansion.
-* Prefer `ip` instead of deprecated `ifconfig`.
-* Sandbox everything in `~/lab` before touching system paths.
+Minimal strategy: for each day in `ROADMAP.md`, pick ONE external deep-dive article aligned to the day's theme and extract 3 actionable notes into your lab journal.
 
-## Glossary (Starter)
-| Term | Meaning |
-|------|---------|
-| Root directory `/` | Top of the filesystem tree |
-| Home directory `~` | User workspace (`/home/username`) |
-| Process | Running instance of a program |
-| Package | Installable bundle of files + metadata |
-| Inode | Metadata record pointing to file data blocks |
-| Shebang | First line selecting interpreter (`#!/usr/bin/env bash`) |
-| umask | Mask deciding default new file permissions |
+> Tip: Avoid passive reading loops. Convert each external article into: (a) command you tried, (b) error you triggered & resolved, (c) note you can teach someone else.
 
-## Why Linux Matters in DevOps
-| Area | Linux Skill Impact |
-|------|--------------------|
-| CI/CD | Script builds, manage artifacts, parse logs |
-| Infra Automation | Understand state for Ansible/Terraform modules |
-| Containers | Kernel features (namespaces, cgroups) underpin Docker/K8s |
-| Monitoring | Command-line triage accelerates incident response |
-| Security | Permissions, patching, file integrity verification |
-| Performance | Tools (`top`, `iotop`, `vmstat`) to detect bottlenecks |
+### External Resource Selection Principles
+1. Prefer distro-agnostic conceptual guides first (filesystem, permissions, processes).  
+2. When a command differs by family (apt/dnf/pacman/zypper), practice the equivalent on a second distro in a disposable VM.  
+3. Skip advanced storage (LVM/RAID) until core daily DevOps tasks feel automatic.  
+4. Revisit security articles after you can reliably create and manage services.  
+5. Treat certification guides as optional structured checklists, not mandatory early reading.
 
-See `roadmap/ROADMAP.md` for phased progression and milestone checks.
+### Example External Deep-Dive Mapping to This Repo
+| This Repo Page | Suggested External Follow-Up Query | Outcome to Capture |
+|----------------|------------------------------------|--------------------|
+| `FileSystem.md` | "Linux directory structure explained" | 2 directories you hadn't explored + one config file path |
+| `Permissions.md` | "Linux sticky bit example" | Difference between sticky vs setgid on directories |
+| `PackageManagement.md` | "rpm verify examples" | One altered config file detection scenario |
+| `RunningScripts.md` | "cron scheduling tasks examples" | A cron entry plus how to list existing crontabs safely |
+| `DevOpsEssentials.md` | "systemctl manage services" | 3 states (active, failed, enabling) screenshot or notes |
+| `FileOperations.md` | "find command practical examples" | One pipeline combining find + xargs safely |
 
-## Contributing
-Add or improve guides with:
-* Clear learning objective at top
-* Runnable examples
-* Safety notes for destructive commands
-* Practice tasks + next steps
-
-## License
-Free to use and share. Attribute if heavily reused.
+Keep external links in a personal notes file instead of cluttering this README; update only if a resource fundamentally changes workflow best practices.
 
 ---
-Start now: open `LinuxIntro.md`, then create `~/lab` and replicate the Quick Start commands.
+
+# Linux Learning Modules (Structured Format)
+
+This repository now uses a module-based progression (01–10). Each module has a concise summary and hands-on checklist. Work inside a sandbox directory like `~/lab`.
+
+## Module Index
+| # | Folder | Theme |
+|---|--------|-------|
+| 01 | `modules/01-intro` | Introduction & distro choice |
+| 02 | `modules/02-filesystem` | Filesystem layout & navigation |
+| 03 | `modules/03-core-commands` | Everyday core commands |
+| 04 | `modules/04-file-ops` | File ops & basic pipelines |
+| 05 | `modules/05-permissions` | Permissions & ownership |
+| 06 | `modules/06-packages` | Package management fundamentals |
+| 07 | `modules/07-scripting` | Bash scripting fundamentals |
+| 08 | `modules/08-services-logs` | Services, processes & logs |
+| 09 | `modules/09-devops` | DevOps integration (scripts + service + container + Ansible) |
+| 10 | `modules/10-interview` | Interview readiness consolidation |
+
+## How to Use
+1. Read the module summary.
+2. Execute each checklist item in your lab environment.
+3. Record notes (questions, outputs, errors) in a personal journal.
+4. Mark exit criteria; only then proceed.
+5. Revisit earlier modules if an interview question feels weak.
+
+## 7-Day Compression
+See `ROADMAP.md` for a day-by-day mapping.
+
+## Sandbox Setup (Quick)
+```bash
+mkdir -p ~/lab && cd ~/lab
+mkdir notes && echo "Start" > notes/progress.txt
+```
+
+## Validation Command Set (Sample)
+When finished with core modules run:
+```bash
+uname -a
+ls -ld /tmp
+find . -name '*.sh'
+ps aux | head
+systemctl status sshd 2>/dev/null || echo 'Skip service check'
+```
+
+## Contributing
+- Keep modules short (under ~150 lines).
+- Include Goal, Focus Points, Checklist, Exit Criteria, Next pointer.
+- Avoid duplicating deep theory; link externally in personal notes.
+
+## License
+Open use; attribute if redistributed.
+
+---
+Start at `modules/01-intro`. Happy learning.
+| Root directory `/` | Top of the filesystem tree |
+
+---
+
+## Connect
+Created by [Anugurthi](https://www.linkedin.com/in/anugurthi/). Feel free to connect or reach out for feedback, collaboration, or questions!
